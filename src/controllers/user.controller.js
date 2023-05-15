@@ -3,8 +3,11 @@ import User from '../models/user.model.js';
 export const getUsers = async (req, res, next) => {
   try {
 		const newUser = new User({
-			firstName: "Anna",
-			lastName: "annaB",
+			firstName: "Joet",
+			lastName: "Bee",
+			email: "dffdfg@gbghf.vom",
+			age: 35,
+			role: "writer"
 		});
 
 		await newUser.save();
