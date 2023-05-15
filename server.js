@@ -10,11 +10,15 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DB_URI, {
+try{
+	await mongoose.connect(process.env.DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-})
-.catch((err) => console.error(err));
+});
+console.log(`Connected to ${mongoose.connection.db.databaseName}`);
+} catch(err){
+	console.error(err)
+};
 mongoose.set('debug', true);
 
 app.use(logger('dev'));
