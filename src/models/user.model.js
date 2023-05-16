@@ -10,7 +10,6 @@ const userSchema = new mongoose.Schema({
 		maxLength: [50, 'Max 50 chars required!'],
 		trim: true, 
 	},
-
 	lastName: {
 		type: String,
 		required: [true, 'Last name is required.'],
